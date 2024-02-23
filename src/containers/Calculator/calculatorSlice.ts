@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface CalculatorState {
-  result: string;
+  numExpression: string;
 }
 
 const initialState: CalculatorState = {
-  result: '',
+  numExpression: '',
 };
 
 export const calculatorSlice = createSlice({
@@ -13,16 +13,16 @@ export const calculatorSlice = createSlice({
   initialState,
   reducers: {
     append: (state, action: PayloadAction<string>) => {
-      state.result += action.payload;
+      state.numExpression += action.payload;
     },
     clear: (state) => {
-      state.result = '';
+      state.numExpression = '';
     },
     evaluate: (state) => {
       try {
-        state.result = eval(state.result).toString();
+        state.numExpression = eval(state.numExpression).toString();
       } catch (error) {
-        state.result = '';
+        state.numExpression = '';
       }
     },
   },
