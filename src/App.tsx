@@ -1,8 +1,10 @@
+import Calculator from "./containers/Calculator/calculator";
+
 const App = () => {
 
   return (
     <>
-    app
+      <Calculator />
     </>
   );
 };
